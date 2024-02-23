@@ -4,6 +4,7 @@
 
 In the dynamic corporate landscape, employee retention emerges as a pivotal challenge, particularly for firms like Canterra. This project aims to address this issue by applying machine learning techniques to predict and understand employee turnover. Using the K-Nearest Neighbors (KNN) and Support Vector Machines (SVM) models, we analyzed Canterra’s employee data to identify key factors influencing employee retention. Our goal is to provide Canterra's management with actionable insights for effective strategy formulation to reduce attrition, thereby enhancing workforce stability and organizational efficiency.
 
+
 ## Problem Statement
 
 Canterra is experiencing a significant challenge with a 15% annual employee attrition rate. High turnover impacts operational efficiency, organizational culture, and growth. Our analysis aims to utilize SVM and KNN models to predict attrition, identify its key drivers, and provide actionable insights for effective retention strategies.
