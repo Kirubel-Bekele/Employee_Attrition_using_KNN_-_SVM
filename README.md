@@ -25,6 +25,8 @@ The final step in our data preparation involved transforming categorical variabl
 In our analytical approach for the K-Nearest Neighbors (KNN) model, we standardized numerical variables across training and testing datasets, ensuring comparability and enhancing the accuracy of distance-based calculations. Excluding the 'Attrition' target variable, we designated the feature sets as train_x and test_x, reserving train_y and test_y for outcome variables, pivotal for the KNN model to assimilate and predict employee attrition.
 
 Commencing with a heuristic initial 'k' value, from the square root of the sample size, we embarked on a comprehensive evaluation across an array of 'k' values from 1 to 50. We meticulously recorded each model's accuracy, plotting the results to discern the most effective 'k'. Despite k=1 yielding the highest accuracy, its corresponding AUC score was akin to random chance, a consequence of the disproportionate class distribution in the test data.
+![](line.png)
+
 
 To address this imbalance, we employed the CARET package, utilizing its cross-validation capabilities to rigorously test and validate the model. This approach yielded an AUC of 0.95, indicative of the model's enhanced predictive power and its potential utility in formulating strategies for employee retention.
 
@@ -35,13 +37,17 @@ We also implemented Support Vector Machine (SVM) classification models into our 
 Further enhancing our model, we integrated a Radial Basis Function (RBF) kernel, adept at systematic tuning for 'cost' and 'gamma' through the 'tune' function yielded an impressive accuracy of 98.03%, indicating a substantial predictive capability.
 
 To consolidate our analysis, we turned to the 'caret' package. By opting for an RBF kernel and a 10-fold cross-validation, we achieved an accuracy of 98.26%, mirroring the performance of the RBF model from the 'e1071' package.
+![](accuracy.png)
 
 ### Selecting the Best Model
 
 In our comparative analysis, we referred to the AUC to determine the best model for predicting employee attrition. Our evaluation focused on the most performant models from each algorithm, with the cross-validated KNN model achieving an AUC of 0.9486 and the radial SVM model demonstrating a superior AUC of 0.9983. This stark difference in AUC, as depicted in Figure 3 in the Appendix, led us to select the radial SVM model as our preferred choice for its exceptional ability to distinguish between employee retention and attrition.
+![](important.png)
 
 ## Conclusion and Managerial Insights
 
 Our radial SVM model analysis offers Canterra actionable insights to strengthen employee retention. The key drivers of attrition, as indicated in Figure 4 in the appendix, are the length of service ('YearsAtCompany') and overall work experience ('TotalWorkingYears'). This highlights a retention risk for more established employees and suggests the need for targeted engagement and retention initiatives for this group. The analysis also stresses the importance of the employee-manager relationship ('YearsWithCurrManager'), suggesting that managerial support is crucial for retention. Moreover, the similar impact of 'MaritalStatus_Married' and 'BusinessTravel' on attrition points to work-life balance challenges, especially for married employees frequently on the move. Addressing these concerns through flexible policies may help in reducing turnover.
+![ROC curve comparison](Roc.png)
+
 
 In summary, by applying the insights from our classification models, Canterra can proactively manage factors that lead to employee turnover. Incorporating these models into their human resource strategy will enable Canterra to preemptively identify at-risk employees and take corrective action, fostering a more committed and contented workforce.
